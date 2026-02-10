@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashqin Mammadov | Content Moderation Specialist</title>
+    <meta name="description" content="Content Moderation Specialist based in Warsaw. Protecting digital communities through expert live stream moderation and platform safety.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-blue: #00d4ff;
+            --neon-purple: #9d4edd;
+            --neon-pink: #ff006e;
+            --dark-bg: #0a0e27;
+            --darker-bg: #050714;
+            --card-bg: #151a3f;
+            --text-primary: #ffffff;
+            --text-secondary: #a8b2d1;
+            --accent-glow: rgba(0, 212, 255, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--darker-bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Animated background grid */
+        .grid-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s linear infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        /* Floating orbs */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.6;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .orb1 {
+            width: 500px;
+            height: 500px;
+            background: var(--neon-blue);
+            top: -200px;
+            left: -200px;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .orb2 {
+            width: 400px;
+            height: 400px;
+            background: var(--neon-purple);
+            bottom: -150px;
+            right: -150px;
+            animation: float 15s ease-in-out infinite reverse;
+        }
+
+        .orb3 {
+            width: 300px;
+            height: 300px;
+            background: var(--neon-pink);
+            top: 50%;
+            left: 50%;
+            animation: float 25s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(100px, -100px) scale(1.1); }
+            66% { transform: translate(-50px, 100px) scale(0.9); }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        /* Mascot Shield Design */
+        .mascot-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeInLeft 1.2s ease-out;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-80px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(80px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .shield-mascot {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            animation: levitate 6s ease-in-out infinite;
+        }
+
+        @keyframes levitate {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Main text content */
+        .hero-text {
+            animation: fadeInRight 1.2s ease-out;
+        }
+
+        .eyebrow {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--neon-blue);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1;
+            background: linear-gradient(135deg, var(--neon-blue) 0%, var(--neon-purple) 50%, var(--neon-pink) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% 200%;
+            animation: gradientShift 8s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.9;
+            margin-bottom: 3rem;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1.2rem 2.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--neon-blue) 0%, var(--neon-purple) 100%);
+            color: white;
+            box-shadow: 0 10px 40px var(--accent-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 60px var(--accent-glow);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--neon-blue);
+            color: var(--neon-blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--neon-blue);
+            color: var(--darker-bg);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 3rem;
+            background: rgba(10, 14, 39, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 1rem 3rem;
+            background: rgba(10, 14, 39, 0.95);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--neon-blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--neon-blue);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--neon-blue);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--neon-blue) 0%, var(--neon-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            transition: all 0.6s ease;
+        }
+
+        .stat-card:hover::before {
+            left: 100%;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-blue);
+            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.2);
+        }
+
+        .stat-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat-number {
+            font-family: 'Syne', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--neon-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: linear-gradient(180deg, var(--neon-blue), var(--neon-purple));
+            transition: height 0.4s ease;
+        }
+
+        .skill-card:hover::before {
+            height: 100%;
+        }
+
+        .skill-card:hover {
+            transform: translateX(10px);
+            border-color: var(--neon-blue);
+            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.15);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .skill-card p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: linear-gradient(180deg, var(--neon-blue), var(--neon-purple), var(--neon-pink));
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 2.5rem;
+            background: var(--card-bg);
+            border-radius: 16px;
+            margin-bottom: 3rem;
+            margin-left: 2rem;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 2.5rem;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--neon-blue);
+            box-shadow: 0 0 20px var(--neon-blue);
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px var(--neon-blue); }
+            50% { transform: scale(1.2); box-shadow: 0 0 30px var(--neon-blue); }
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+            border-color: var(--neon-blue);
+        }
+
+        .timeline-item h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-date {
+            color: var(--neon-blue);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .timeline-item ul {
+            list-style: none;
+        }
+
+        .timeline-item li {
+            padding: 0.7rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text-secondary);
+        }
+
+        .timeline-item li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--neon-blue);
+            font-size: 1.5rem;
+        }
+
+        /* Languages */
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .language-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .language-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-blue);
+            box-shadow: 0 15px 50px rgba(0, 212, 255, 0.2);
+        }
+
+        .language-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .language-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .language-level {
+            font-size: 0.9rem;
+            color: var(--neon-blue);
+            padding: 0.4rem 1rem;
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .progress-bar {
+            height: 10px;
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+            border-radius: 10px;
+            transition: width 1.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* Contact Section */
+        .contact-content {
+            background: var(--card-bg);
+            padding: 4rem;
+            border-radius: 24px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            padding: 2rem;
+            background: rgba(0, 212, 255, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: var(--neon-blue);
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-item p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .contact-item a {
+            color: var(--neon-blue);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--neon-purple);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--darker-bg);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        footer p {
+            color: var(--text-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 4rem;
+            }
+
+            .shield-mascot {
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            .timeline {
+                padding-left: 2rem;
+            }
+
+            .timeline-item {
+                margin-left: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-background"></div>
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">DM</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#languages">Languages</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="mascot-container">
+                <svg class="shield-mascot" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Shield base -->
+                    <defs>
+                        <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#9d4edd;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#ff006e;stop-opacity:1" />
+                        </linearGradient>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    
+                    <!-- Main shield shape -->
+                    <path d="M200 50 L320 100 L320 220 Q320 320 200 350 Q80 320 80 220 L80 100 Z" 
+                          fill="url(#shieldGradient)" 
+                          opacity="0.2" 
+                          filter="url(#glow)"/>
+                    
+                    <path d="M200 60 L310 105 L310 215 Q310 305 200 335 Q90 305 90 215 L90 105 Z" 
+                          fill="none" 
+                          stroke="url(#shieldGradient)" 
+                          stroke-width="3"
+                          filter="url(#glow)">
+                        <animate attributeName="stroke-dasharray" 
+                                 from="0,1000" 
+                                 to="1000,0" 
+                                 dur="3s" 
+                                 repeatCount="indefinite"/>
+                    </path>
+                    
+                    <!-- Eye (surveillance symbol) -->
+                    <ellipse cx="200" cy="180" rx="60" ry="40" 
+                             fill="#00d4ff" 
+                             opacity="0.3"/>
+                    <circle cx="200" cy="180" r="25" 
+                            fill="#fff" 
+                            opacity="0.9"/>
+                    <circle cx="200" cy="180" r="15" 
+                            fill="#00d4ff">
+                        <animate attributeName="r" 
+                                 values="15;18;15" 
+                                 dur="2s" 
+                                 repeatCount="indefinite"/>
+                    </circle>
+                    
+                    <!-- Checkmark -->
+                    <path d="M 160 250 L 185 275 L 240 210" 
+                          fill="none" 
+                          stroke="#00d4ff" 
+                          stroke-width="8" 
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          opacity="0.8">
+                        <animate attributeName="stroke-dasharray" 
+                                 from="0,200" 
+                                 to="200,0" 
+                                 dur="2s" 
+                                 repeatCount="indefinite"/>
+                    </path>
+                    
+                    <!-- Orbiting particles -->
+                    <circle cx="200" cy="100" r="4" fill="#00d4ff">
+                        <animateTransform attributeName="transform"
+                                          type="rotate"
+                                          from="0 200 200"
+                                          to="360 200 200"
+                                          dur="8s"
+                                          repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="200" cy="100" r="4" fill="#9d4edd">
+                        <animateTransform attributeName="transform"
+                                          type="rotate"
+                                          from="120 200 200"
+                                          to="480 200 200"
+                                          dur="8s"
+                                          repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="200" cy="100" r="4" fill="#ff006e">
+                        <animateTransform attributeName="transform"
+                                          type="rotate"
+                                          from="240 200 200"
+                                          to="600 200 200"
+                                          dur="8s"
+                                          repeatCount="indefinite"/>
+                    </circle>
+                </svg>
+            </div>
+
+            <div class="hero-text">
+                <div class="eyebrow">Content Moderation Specialist</div>
+                <h1>Dashqin<br>Mammadov</h1>
+                <p class="subtitle">Protecting Digital Communities</p>
+                <p class="hero-description">
+                    Expert in live stream moderation, platform safety, and community guidelines enforcement. 
+                    Based in Warsaw with 1.5+ years of experience maintaining safe digital environments for 
+                    global audiences. Fluent in 4 languages, ready for 24/7 shift coverage.
+                </p>
+                <div class="cta-group">
+                    <a href="#contact" class="btn btn-primary">
+                        Get In Touch →
+                    </a>
+                    <a href="#experience" class="btn btn-secondary">
+                        View Experience
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Stats -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">⚡</div>
+                <div class="stat-number">1.5+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🌍</div>
+                <div class="stat-number">4</div>
+                <div class="stat-label">Languages</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🕐</div>
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Availability</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🎯</div>
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Commitment</div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <p class="section-subtitle">
+                    Combining technical expertise with people-first approach to digital safety
+                </p>
+            </div>
+            <div class="skill-card" style="max-width: 900px; margin: 0 auto;">
+                <p style="font-size: 1.15rem; line-height: 1.9; color: var(--text-secondary);">
+                    I'm a content moderation specialist with a strong foundation in customer support and technical 
+                    environments. My experience spans blockchain customer support, SaaS platforms, and handling 
+                    sensitive user information - all directly applicable to live content moderation.
+                </p>
+                <p style="font-size: 1.15rem; line-height: 1.9; color: var(--text-secondary); margin-top: 1.5rem;">
+                    Currently pursuing an <strong style="color: var(--neon-blue);">MA in Computer Engineering</strong> 
+                    at Uczelnia Vistula in Warsaw, I bring technical understanding that helps me quickly adapt to 
+                    moderation tools, understand platform systems, and communicate effectively with technical teams.
+                </p>
+                <p style="font-size: 1.15rem; line-height: 1.9; color: var(--text-secondary); margin-top: 1.5rem;">
+                    Based in <strong style="color: var(--neon-blue);">Warsaw, Poland</strong>, I'm ready to work 
+                    12-hour shifts on a 2/2 schedule, including night shifts, to ensure continuous platform safety 
+                    and user protection.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+            <div class="section-header">
+                <h2>Core Competencies</h2>
+                <p class="section-subtitle">
+                    Essential skills for effective content moderation and platform safety
+                </p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">⚖️</div>
+                    <h3>Sound Judgment</h3>
+                    <p>
+                        Quick, objective decision-making while reviewing live content and enforcing 
+                        platform policies consistently across diverse situations.
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🔍</div>
+                    <h3>Detail-Oriented</h3>
+                    <p>
+                        Expert at identifying policy violations, inappropriate content, and subtle 
+                        behavioral patterns that require intervention or escalation.
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">💪</div>
+                    <h3>Emotional Resilience</h3>
+                    <p>
+                        Comfortable reviewing sensitive content while maintaining professional objectivity, 
+                        mental well-being, and consistent standards.
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🤝</div>
+                    <h3>Conflict Resolution</h3>
+                    <p>
+                        Skilled in handling complaints, de-escalating situations, and enforcing 
+                        rules fairly while maintaining positive user experiences.
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🌐</div>
+                    <h3>Cultural Awareness</h3>
+                    <p>
+                        Deep understanding of diverse cultural contexts essential for moderating 
+                        global platforms with international user bases.
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">💻</div>
+                    <h3>Tech Proficiency</h3>
+                    <p>
+                        Confident with digital tools and moderation systems. Quick learner with 
+                        technical education background in Computer Engineering.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience">
+            <div class="section-header">
+                <h2>Experience</h2>
+                <p class="section-subtitle">
+                    Proven track record in customer support and content management
+                </p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Customer Support Consultant</h3>
+                    <span class="timeline-date">Support Your App LLC | January 2023 - July 2023</span>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                        Blockchain sector customer support via multiple channels
+                    </p>
+                    <ul>
+                        <li>Monitored and moderated user interactions across calls, chats, and emails</li>
+                        <li>Built positive relationships while maintaining professional boundaries</li>
+                        <li>Consistently met and exceeded team KPIs in fast-paced environment</li>
+                        <li>Handled sensitive customer information with security and compliance</li>
+                        <li>Stayed current with technology changes and platform updates</li>
+                        <li>Coordinated with developers and IT teams for issue escalation</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Customer Service Specialist</h3>
+                    <span class="timeline-date">AFEA GROUP | April 2020 - October 2020</span>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                        Technical customer support in SaaS environment
+                    </p>
+                    <ul>
+                        <li>Technical support role requiring strong problem-solving abilities</li>
+                        <li>Maintained highest service standards in evolving environment</li>
+                        <li>Adapted to changing requirements and contributed to improvements</li>
+                        <li>Demonstrated English proficiency for international communication</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Languages -->
+        <section id="languages">
+            <div class="section-header">
+                <h2>Languages</h2>
+                <p class="section-subtitle">
+                    Multilingual capabilities for global content moderation
+                </p>
+            </div>
+            <div class="languages-grid">
+                <div class="language-card">
+                    <div class="language-header">
+                        <span class="language-name">🇬🇧 English</span>
+                        <span class="language-level">Excellent</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="95"></div>
+                    </div>
+                </div>
+                <div class="language-card">
+                    <div class="language-header">
+                        <span class="language-name">🇦🇿 Azerbaijani</span>
+                        <span class="language-level">Native</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="100"></div>
+                    </div>
+                </div>
+                <div class="language-card">
+                    <div class="language-header">
+                        <span class="language-name">🇹🇷 Turkish</span>
+                        <span class="language-level">Excellent</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="95"></div>
+                    </div>
+                </div>
+                <div class="language-card">
+                    <div class="language-header">
+                        <span class="language-name">🇵🇱 Polish</span>
+                        <span class="language-level">Beginner</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="30"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <div class="section-header">
+                <h2>Let's Connect</h2>
+                <p class="section-subtitle">
+                    Ready to contribute to platform safety and community protection
+                </p>
+            </div>
+            
+            <div class="contact-content">
+                <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--text-primary);">Get In Touch</h3>
+                <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto 2rem;">
+                    I'm excited about opportunities in content moderation and platform safety. 
+                    Let's discuss how my experience can benefit your team.
+                </p>
+                
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <h4>Location</h4>
+                        <p>Warsaw, Poland</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <h4>Phone</h4>
+                        <p><a href="tel:+48516863152">+48 516 863 152</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <h4>Email</h4>
+                        <p><a href="mailto:dasqinm6@gmail.com">dasqinm6@gmail.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">⏰</div>
+                        <h4>Availability</h4>
+                        <p>12-hour shifts (2/2)<br>Night shifts ready</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem;">
+                    <a href="mailto:dasqinm6@gmail.com" class="btn btn-primary" style="font-size: 1.1rem;">
+                        Send Email →
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Dashqin Mammadov. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; opacity: 0.7;">Content Moderation Specialist | Warsaw, Poland</p>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Animate progress bars
+        const progressObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const fills = entry.target.querySelectorAll('.progress-fill');
+                    fills.forEach(fill => {
+                        const width = fill.getAttribute('data-width');
+                        setTimeout(() => {
+                            fill.style.width = width + '%';
+                        }, 300);
+                    });
+                    progressObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelector('#languages').addEventListener('DOMContentLoaded', () => {
+            progressObserver.observe(document.querySelector('#languages'));
+        });
+        setTimeout(() => {
+            progressObserver.observe(document.querySelector('#languages'));
+        }, 500);
+
+        // Active nav highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 200;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.color = 'var(--text-secondary)';
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.style.color = 'var(--neon-blue)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
